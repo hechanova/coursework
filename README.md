@@ -1,1 +1,2 @@
-# coursework: projects for school
+# coursework
+Just projects for school
