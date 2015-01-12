@@ -9,7 +9,7 @@ var bio = {
     "twitter" : "twitter.com/hechanova",
     "github" : "github.com/hechanova",
     "blog" : "thisisaok.com/blog",
-    "location" : "SF"
+    "location" : "San Francisco, CA"
   },
   "bioPic" : "images/fry.jpg",
   "welcomeMsg" : "Hello. Thanks for stopping by.",
@@ -97,7 +97,7 @@ var work =
 // $("#workExperience").append(formattedLocation);
 // $("#workExperience").append(formattedDescription);
 
-function displayWork(){
+work.display = function(){
   for(job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
     var EmployerName = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
@@ -113,7 +113,7 @@ function displayWork(){
     $(".work-entry:last").append(formattedDesc);
   }
 }
-displayWork();
+work.display();
 
 
 //**PROJECTS SECTION**
@@ -174,13 +174,13 @@ var education =
   [
     {
       "name" : "Columbia College Chicago",
-      "city" : "Chicago, IL",
+      "location" : "Chicago, IL",
       "degree" : ["BFA"],
       "major" : "Graphic Design"
     },
     {
       "name" : "University of Guam",
-      "city" : "Mangilao, GU",
+      "location" : "Mangilao, GU",
       "major" : ["Fine Arts"]
     }
   ],
@@ -207,3 +207,7 @@ function inName(name){
 }
 
 $('#main').append(internationalizeButton);
+
+//**MAP**
+
+$("#mapDiv").append(googleMap);
