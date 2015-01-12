@@ -126,19 +126,19 @@ var projects =
       "title" : "Findery iOS app",
       "dates" : "2013 - 2014",
       "description" : "iOS application that allows people to attach content to geographic coordinates",
-      "images" : ["images/findery1.jpg", "images/findery2.jpg", "images/findery3.jpg"]
+      "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
     {
       "title" : "Findery Android app",
       "dates" : "2014",
       "description" : "Android application utilizing Findery's platform",
-      "images" : ["images/android1.jpg", "images/android2.jpg", "images/android3.jpg"]
+      "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
     {
       "title" : "Threadflip iOS app",
       "dates" : "2012",
       "description" : "iOS application that allows users to buy and sell designer clothing",
-      "images" : ["images/tf1.jpg", "images/tf2.jpg", "images/tf3.jpg"]
+      "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     }
   ]
 }
@@ -146,10 +146,13 @@ var projects =
 projects.display = function() {
   for (project in projects.projects) {
     $("#projects").append(HTMLprojectStart);
+
     var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
     $(".project-entry:last").append(formattedTitle);
+
     var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
     $(".project-entry:last").append(formattedDates);
+
     var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
     $(".project-entry:last").append(formattedDescription);
 
