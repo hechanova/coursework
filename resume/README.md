@@ -1,3 +1,5 @@
+This project can also be viewed here: http://hechanova.com/udacity/resume/
+
 # The Resume Project
 
 ## How do I complete this project?
