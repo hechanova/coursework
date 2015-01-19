@@ -8,7 +8,7 @@ var bio = {
     "email" : "laurel@thisisaok.com",
     "twitter" : "twitter.com/hechanova",
     "github" : "github.com/hechanova",
-    "blog" : "thisisaok.com/blog",
+    "blog" : "blog.thisisaok.com",
     "location" : "San Francisco, CA"
   },
   "bioPic" : "images/laurelhechanova.jpg",
@@ -30,15 +30,15 @@ bio.display = function (){
     $("#topContacts").append(formattedEmail);
     $("#footerContacts").append(formattedEmail);
 
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+    var formattedTwitter = HTMLtwitter.replace(/#|%data%/g, bio.contact.twitter);
     $("#topContacts").append(formattedTwitter);
     $("#footerContacts").append(formattedTwitter);
 
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+    var formattedGithub = HTMLgithub.replace(/#|%data%/g, bio.contact.github);
     $("#topContacts").append(formattedGithub);
     $("#footerContacts").append(formattedGithub);
 
-    var formattedBlog = HTMLblog.replace("%data%", bio.contact.blog);
+    var formattedBlog = HTMLblog.replace(/#|%data%/g, bio.contact.blog);
     $("#topContacts").append(formattedBlog);
 
     var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
@@ -123,19 +123,22 @@ var projects =
         "title" : "Findery iOS app",
         "dates" : "2013 - 2014",
         "description" : "iOS application that allows people to attach content to geographic coordinates",
-        "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+        "images" : ["images/fi01.png", "images/fi02.png", "images/fi03.png"],
+        "url" : "https://itunes.apple.com/us/app/findery-discover-share-destinations/id597596497?mt=8"
       },
       {
         "title" : "Findery Android app",
         "dates" : "2014",
         "description" : "Android application utilizing Findery's platform",
-        "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+        "images" : ["images/fa01.jpg", "images/fa02.jpg", "images/fa03.jpg"],
+        "url" : "https://play.google.com/store/apps/details?id=com.twobkco.findery&hl=en"
       },
       {
-        "title" : "Threadflip iOS app",
+        "title" : "Desktop Wallpaper",
         "dates" : "2012",
         "description" : "iOS application that allows users to buy and sell designer clothing",
-        "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+        "images" : ["images/il01.jpg", "images/il02.jpg", "images/il03.jpg"],
+        "url" : "http://swsii.tumblr.com"
       }
     ]
   };
@@ -144,7 +147,8 @@ projects.display = function() {
   for (project in projects.projects) {
     $("#projects").append(HTMLprojectStart);
 
-    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    var newTitle = HTMLprojectTitle.replace("#", projects.projects[project].url);
+    var formattedTitle = newTitle.replace("%data%", projects.projects[project].title);
     $(".project-entry:last").append(formattedTitle);
 
     var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
