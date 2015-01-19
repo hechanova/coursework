@@ -1,7 +1,7 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .clearfix {
@@ -9,13 +9,17 @@
 }
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 10%;
+}
+
+#title {
+  position: relative;
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 40px;
-  color: #F5A623;
+  font-size: 2.5em;
+  color: #84ABB5;
   line-height: 48px;
   display: inline;
 }
@@ -25,13 +29,12 @@ h2 {
   font-size: 24px;
   color: #999999;
   line-height: 29px;
-  padding: 10px;
+  padding: 0 10px 10px 0;
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #999999;
   line-height: 22px;
 }
 
@@ -43,11 +46,19 @@ h4 {
 }
 
 h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10px;
 }
 
+#role {
+  position: absolute;
+  bottom: 6px;
+  right: 0;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
 .date-text {
   font-style: italic;
@@ -66,14 +77,21 @@ h2, h3, h4, h5 {
 
 }
 
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 p {
-  font-size: 14px;
+  font-size: 1.2em;
   color: #333333;
-  line-height: 21px;
+  line-height: 1.4em;
 }
 
 a {
-  color: #1199C3;
+  color: #84ABB5;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -82,13 +100,18 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #666;
   line-height: 28px;
 }
 
+.major {
+  color: #666;
+}
+
 #skillsH3 {
-  color: #F5AE23;
+  color: #84ABB5;
   display: none;
+  padding: 10px 0 0 0;
 }
 
 #skills {
@@ -96,20 +119,22 @@ a {
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #84ABB5;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #84ABB5;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #FFFFFF;
+  margin-left: 5px;
+  /*font-weight: bold;*/
+  letter-spacing: .2px;
+  color: #666;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  /*background-color: #F3F3F3;*/
   padding-bottom: 10px;
   clear:both;
 }
@@ -120,7 +145,29 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  /*background-color: #484848;*/
+}
+
+.separator {
+  margin: auto;
+  margin-top:2.5%;
+  padding: 1.25% 0;
+  width: 80%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.separatorFooter {
+  margin: auto;
+  margin-top:2.5%;
+  padding: 1.25% 0 0 0;
+  width: 80%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .flex-box {
@@ -134,25 +181,38 @@ a {
 
 .center-content {
   padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#topContacts {
+  margin-bottom: 10px;
 }
 
 ul {
   list-style-type: none;
+  line-height: 1.6em;
 }
 
 .biopic {
   float: left;
-  padding: 10px;
   width: 200px;
-  display: none;
+  height: 200px;
+  border-radius:50%;
+  overflow:hidden;
+  margin: 0 20px 0 0;
+  display: hidden;
 }
 
-img {
-  padding: 10px;
+#projects img {
+  padding: 20px 20px 10px 0;
 }
+
+#footer {
+  padding: 0 10%;
+}
+
+
 
 /* Bar chart stuff */
 .chart div {
@@ -166,49 +226,92 @@ img {
   display: inline-block;
 }
 
-span {
+/*span {
   padding: 5px;
-}
+}*/
 
-#letsConnect {
+/*#letsConnect {
   text-align: center;
-}
-
-@media only screen and (max-width: 1024px) {
-  #letsConnect {
-    margin-top: 5%;
-  }
-}
-
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  #letsConnect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-}
+}*/
 
 #map {
   display: block;
   height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #mapDiv {
   height: 400px;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
+}
+
+@media only screen and (max-width: 1024px) {
+  /*#letsConnect {
+    margin-top: 5%;
+  }*/
+}
+
+@media only screen and (max-width:900px) {
+  #title {
+    margin: auto;
+  }
+
+  #role {
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .biopic {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  /*#letsConnect {
+    margin-top: 10%;
+  }*/
+
+  #title {
+    text-align: center;
+  }
+
+  #name {
+    line-height: 1.2em;
+  }
+
+  #role {
+    position: relative;
+    line-height: 3em;
+    margin-top: 100px;
+    bottom: 2px;
+  }
+
+  #topContacts {
+    margin: 10px 0 0;
+  }
+
+  .biopic, .welcome-message, #skills {
+    display: none;
+  }
+
+  .education-entry, .work-entry, .project-entry {
+    padding: 2.5% 10%;
+  }
+
+  #mapContainer {
+    height: 280px;
+  }
+
+  #mapDiv {
+    height: 200px;
+    width: 100%;
+    padding-bottom: 5%;
+    margin-bottom: 30px;
+  }
+
 }
 
 @media only screen and (min-width: 750px) {

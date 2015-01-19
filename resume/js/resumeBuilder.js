@@ -1,4 +1,4 @@
-//**BIO SECTION**
+//**HEADER & BIO SECTION**
 
 var bio = {
   "name" : "Laurel Hechanova",
@@ -11,36 +11,46 @@ var bio = {
     "blog" : "thisisaok.com/blog",
     "location" : "San Francisco, CA"
   },
-  "bioPic" : "images/fry.jpg",
+  "bioPic" : "images/laurelhechanova.jpg",
   "welcomeMsg" : "Hello. Thanks for stopping by.",
   "skills" : ["Design", "Development", "Illustration"]
 };
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
-var formattedBlog = HTMLblog.replace("%data%", bio.contact.blog);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
+bio.display = function (){
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#title").prepend(formattedRole);
+    $("#title").prepend(formattedName);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedTwitter);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedBlog);
-$("#topContacts").append(formattedLocation);
-$("#header").append(formattedBioPic);
-$("#header").append(formattedWelcome);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+    $("#topContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedMobile);
 
-// var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-// $("#header").append(HTMLskillsStart);
-// $("#header").append(formattedSkills);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
+    $("#topContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedEmail);
+
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+    $("#topContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedTwitter);
+
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+    $("#topContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedGithub);
+
+    var formattedBlog = HTMLblog.replace("%data%", bio.contact.blog);
+    $("#topContacts").append(formattedBlog);
+
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+    $("#topContacts").append(formattedLocation);
+
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    $("#header").append(formattedBioPic);
+
+    var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
+    $("#header").append(formattedWelcome);
+};
+bio.display();
 
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
@@ -48,54 +58,41 @@ if (bio.skills.length > 0) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
     $("#skills").append(formattedSkill);
   }
-}
-
+};
 
 //**WORK SECTION**
 
 var work =
-{
-  "jobs" :
-    [
-      {
-        "employer" : "Findery",
-        "title" : "Product Designer",
-        "dates" : "2013 - Present",
-        "location" : "San Francisco, CA",
-        "description" : "UI and UX design for iOS, Android and web apps",
-        "url" : "http://www.findery.com"
-      },
-      {
-        "employer" : "Freelance",
-        "title" : "Designer",
-        "dates" : "2011 - 2013",
-        "location" : "Chicago, IL",
-        "description" : "UI and graphic design for small businesses and non-profits",
-        "url" : "http://www.thisisaok.com"
-      },
-      {
-        "employer" : "mStoner",
-        "title" : "Designer",
-        "dates" : "2007 - 2011",
-        "location" : "Chicago, IL",
-        "description" : "UI and graphic design for colleges and universities",
-        "url" : "http://www.mstoner.com"
-      }
-    ]
-}
+  {
+    "jobs" :
+      [
+        {
+          "employer" : "Findery",
+          "title" : "Product Designer",
+          "dates" : "2013 - Present",
+          "location" : "San Francisco, CA",
+          "description" : "UI and UX design for iOS, Android and web apps",
+          "url" : "http://www.findery.com"
+        },
+        {
+          "employer" : "Freelance",
+          "title" : "Designer",
+          "dates" : "2011 - 2013",
+          "location" : "Chicago, IL",
+          "description" : "UI and graphic design for small businesses and non-profits",
+          "url" : "http://www.thisisaok.com"
+        },
+        {
+          "employer" : "mStoner",
+          "title" : "Designer",
+          "dates" : "2007 - 2011",
+          "location" : "Chicago, IL",
+          "description" : "UI and graphic design for colleges and universities",
+          "url" : "http://www.mstoner.com"
+        }
+      ]
+  };
 
-// var formattedEmployer = HTMLworkEmployer.replace("%data%", work.employer);
-// var formattedTitle = HTMLworkTitle.replace("%data%", work.title);
-// var formattedDates = HTMLworkDates.replace("%data%", work.dates);
-// var formattedLocation = HTMLworkLocation.replace("%data%", work.location);
-// var formattedDescription = HTMLworkDescription.replace("%data%", work.description);
-//
-// $("#workExperience").append(HTMLworkStart);
-// $("#workExperience").append(formattedEmployer);
-// $("#workExperience").append(formattedTitle);
-// $("#workExperience").append(formattedDates);
-// $("#workExperience").append(formattedLocation);
-// $("#workExperience").append(formattedDescription);
 
 work.display = function(){
   for(job in work.jobs) {
@@ -112,36 +109,36 @@ work.display = function(){
     var formattedDesc = HTMLworkDescription.replace("%data%",work.jobs[job].description);
     $(".work-entry:last").append(formattedDesc);
   }
-}
+};
 work.display();
 
 
 //**PROJECTS SECTION**
 
 var projects =
-{
-  "projects" :
-  [
-    {
-      "title" : "Findery iOS app",
-      "dates" : "2013 - 2014",
-      "description" : "iOS application that allows people to attach content to geographic coordinates",
-      "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
-    },
-    {
-      "title" : "Findery Android app",
-      "dates" : "2014",
-      "description" : "Android application utilizing Findery's platform",
-      "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
-    },
-    {
-      "title" : "Threadflip iOS app",
-      "dates" : "2012",
-      "description" : "iOS application that allows users to buy and sell designer clothing",
-      "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
-    }
-  ]
-}
+  {
+    "projects" :
+    [
+      {
+        "title" : "Findery iOS app",
+        "dates" : "2013 - 2014",
+        "description" : "iOS application that allows people to attach content to geographic coordinates",
+        "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+      },
+      {
+        "title" : "Findery Android app",
+        "dates" : "2014",
+        "description" : "Android application utilizing Findery's platform",
+        "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+      },
+      {
+        "title" : "Threadflip iOS app",
+        "dates" : "2012",
+        "description" : "iOS application that allows users to buy and sell designer clothing",
+        "images" : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+      }
+    ]
+  };
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -163,37 +160,113 @@ projects.display = function() {
       }
     }
   }
-}
+};
 projects.display();
 
 //**EDUCATION SECTION**
 
 var education =
-{
-  "schools" :
-  [
-    {
-      "name" : "Columbia College Chicago",
-      "location" : "Chicago, IL",
-      "degree" : ["BFA"],
-      "major" : "Graphic Design"
-    },
-    {
-      "name" : "University of Guam",
-      "location" : "Mangilao, GU",
-      "major" : ["Fine Arts"]
-    }
-  ],
-  "onlineCourses" :
-  [
-    {
-      "title" : "Front-End Web Dev Nanodegree",
-      "school" : "Udacity",
-      "dates" : "2014",
-      "url" : "http://www.udacity.com/course/ud804"
-    }
-  ]
-}
+  {
+    "schools" :
+    [
+      {
+        "name" : "Columbia College Chicago",
+        "location" : "Chicago, IL",
+        "degree" : ["BFA"],
+        "dates" : "2005",
+        "major" : "Graphic Design"
+      },
+      {
+        "name" : "University of Guam",
+        "location" : "Mangilao, GU",
+        "dates" : "2000",
+        "degree" : ["BFA"],
+        "major" : ["Fine Arts"]
+      }
+    ],
+    "online" :
+    [
+      {
+        "title" : "Front-End Web Dev Nanodegree",
+        "school" : "Udacity",
+        "dates" : "2014",
+        "url" : "http://www.udacity.com/course/ud804"
+      }
+    ]
+  };
+
+education.display = function(){
+  for(school in education.schools){
+    $("#education").append(HTMLschoolStart);
+
+    var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+    var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    $(".education-entry:last").append(formattedName + formattedDegree);
+
+    var formattedDate = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    $(".education-entry:last").append(formattedDate);
+
+    var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    $(".education-entry:last").append(formattedLocation);
+
+    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+    $(".education-entry:last").append(formattedMajor);
+  };
+
+  // for(course in education.onlineCourses){
+  //
+  //   var title = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+  //   var formattedTitle = title.replace("#", education.onlineCourses[course].url);
+  //   var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+  //   $(".education-entry:last").append(formattedTitle + formattedSchool);
+  //
+  //   var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+  //   $(".education-entry:last").append(formattedDates);
+  // }
+
+
+  for(online in education.online) {
+
+    $("#education").append(HTMLonlineClasses);
+    $("#education").append(HTMLschoolStart);
+
+    // online classes section
+
+    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.online[online].title);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.online[online].school);
+
+    // combines the School and Degree
+    var formattedOnlineHeading =  formattedOnlineTitle + formattedOnlineSchool;
+    $(".education-entry:last").append(formattedOnlineHeading);
+
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.online[online].dates);
+    $(".education-entry:last").append(formattedOnlineDates);
+  }
+};
+education.display();
+
+// onlineCourses.display = function(){
+//   for(course in education.onlineCourses){
+//     $("#education").append(HTMLonlineClasses);
+//
+//     var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+//     $(".education-entry:last").append(formattedTitle);
+//
+//     var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+//     $(".education-entry:last").append(formattedSchool);
+//
+//     var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+//     $(".education-entry:last").append(formattedDates);
+//
+//     var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+//     $(".education-entry:last").append(formattedURL);
+//   }
+// };
+// onlineCourses.display();
+
+//**MAP**
+
+$("#mapDiv").append(googleMap);
 
 //**INT'L BUTTON**
 
@@ -208,6 +281,9 @@ function inName(name){
 
 $('#main').append(internationalizeButton);
 
-//**MAP**
+//**FOOTER CONTACTS**
 
-$("#mapDiv").append(googleMap);
+// $("#footerContacts").append(formattedMobile);
+// $("#footerContacts").append(formattedEmail);
+// $("#footerContacts").append(formattedTwitter);
+// $("#footerContacts").append(formattedGithub);
