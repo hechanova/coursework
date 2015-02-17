@@ -177,13 +177,13 @@ var education =
         "name" : "Columbia College Chicago",
         "location" : "Chicago, IL",
         "degree" : ["BFA"],
-        "dates" : "2005",
+        "dates" : 2005,
         "major" : "Graphic Design"
       },
       {
         "name" : "University of Guam",
         "location" : "Mangilao, GU",
-        "dates" : "2000",
+        "dates" : 2000,
         "degree" : ["BFA"],
         "major" : ["Fine Arts"]
       }
@@ -193,7 +193,7 @@ var education =
       {
         "title" : "Front-End Web Dev Nanodegree",
         "school" : "Udacity",
-        "dates" : "2014",
+        "dates" : 2014,
         "url" : "http://www.udacity.com/course/ud804"
       }
     ]
