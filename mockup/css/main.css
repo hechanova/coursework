@@ -39,7 +39,7 @@ h2 {
 /* Layout */
 
 .container {
-    
+
     /* margin: 0 auto; centered layout */
     margin: 0 34px; /* comparison layout */
     max-width: 970px;
@@ -90,4 +90,10 @@ article {
 #mockup {
 	margin: -8px -42px;
 	padding: 0;
+}
+.mockup-overlay {
+	top: 0;
+	position: absolute;
+	z-index: -1;
+	opacity: 0.4;
 }
